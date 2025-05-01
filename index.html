@@ -24,7 +24,7 @@
       left: 0;
       width: 100%;
       height: 84px;
-      background: #793037;
+      background: #990000;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -34,10 +34,15 @@
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #fff;
-    }
+	  display: flex;
+	  align-items: center;
+	  height: 100%;
+	}
+	.logo img {
+	  max-height: 80px;
+	  height: auto;
+	  width: auto;
+	}
 
     .contact-info {
       text-align: right;
@@ -195,14 +200,19 @@ a:hover {
   .hero h1 {
     top: 5%;
   }
+  .logo img {
+    content: url('logo-s.png');
+    max-height: 60px;
+  }
 }
+
 
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo"><img src="logo.png" alt="Achill Knitwear logo" style="width:100%; height:auto;"></div>
+  <div class="logo"><img src="logo-m.png" alt="Achill Knitwear logo" style="width:100%; height:auto;"></div>
   <div class="contact-info">
     <div>t: <a href="tel:+353860898695" aria-label="Call 086 089 8695">086 089 8695</a></div>
     <div>e: <a href="mailto:info@achillknitwear.com">info@achilknitwear.com</a></div>
