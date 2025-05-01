@@ -1,52 +1,255 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achill Knitwear - Irish Knitwear and Crafts from Achill Island, Co. Mayo, Ireland</title>
-    <style>
-        /* General page styling */
-        body {
-            background: radial-gradient(closest-side, #CC0000, #990000);
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Ken Burns Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Centered container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
 
-        /* Logo styling */
-        .logo {
-            max-width: 300px;
-            height: auto;
-        }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background: #793037;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
 
-        /* Headline styling */
-        h1 {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
 
+    .contact-info {
+      text-align: right;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .hero {
+      margin-top: 90px;
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%; /* Slightly larger than container */
+      height: 110%;
+      object-fit: cover;
+      animation: kenburns 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes kenburns {
+      0% {
+        transform: scale(1) translateX(0);
+      }
+      100% {
+        transform: scale(1.1) translateX(-2.5%);
+      }
+    }
+
+    .hero h1 {
+      position: absolute;
+      top: 10%;
+	  left: 50%;
+	  transform: translateX(-50%);
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 0 0 10px #555, 0 0 20px #555;
+    }
+
+    .intro-text {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .three-boxes {
+      background: #eee;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .three-boxes .box {
+      background: #fff;
+      padding: 20px;
+      flex: 1 1 300px;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+	.two-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+.list-box {
+  background: #fff;
+  padding: 30px;
+  max-width: 400px;
+  flex: 1 1 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-box h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.list-box ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.list-box li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+    footer {
+      background: #232323;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Responsive hero image switching */
+    @media (max-width: 767px) {
+      .hero img {
+        content: url('hero-768.jpg');
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .hero img {
+        content: url('hero-1280.jpg');
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .hero img {
+        content: url('hero-1920.jpg');
+      }
+    }
+	a {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited,
+a:active,
+a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="achill-knitwear-logo.png" alt="Achill Knitwear Logo" class="logo">
-        <h1>Website Closed</h1>
-		<p>Sorry, we are currently offline.</p>
-    </div>
+<header>
+  <div class="logo"><img src="logo.png" alt="Achill Knitwear logo" height="80" width="210"></div>
+  <div class="contact-info">
+    <div>Call: <a href="tel:+353860898695" aria-label="Call 086 089 8695">086 089 8695</a></div>
+    <div>Email: <a href="mailto:info@achillknitwear.com">info@achilknitwear.com</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="hero-1920.jpg" alt="Hero Image">
+  <h1>Welcome to Achill Knitwear</h1>
+</section>
+
+<section class="intro-text">
+  <p>Welcome to AchillKnitwear.com, the online home of Kieran Sweeney's craft shop and gallery at Achill Sound on Achill Island, Co. Mayo, on Ireland's spectacular Wild Atlantic Way.</p>
+</section>
+<section class="two-lists">
+  <div class="list-box">
+	<h2>Irish Knitwear</h2>
+    <ul>
+      <li>Aran sweaters</li>
+      <li>Sheepskin Rugs</li>
+      <li>Irish Woollen Socks</li>
+      <li>Hats &amp; Scarves</li>
+    </ul>
+  </div>
+  <div class="list-box">
+	<h2>Achill Island Crafts</h2>
+    <ul>
+      <li>Achill Prints &amp; Photos</li>
+      <li>Local Interest Books</li>
+      <li>Achill Island Souvenirs</li>
+      <li>Irish Linen</li>
+    </ul>
+  </div>
+</section>
+
+<section class="three-boxes">
+  <div class="box">
+    <img src="currach.jpg" alt="Wooden replica of traditional Irish currach" style="width:100%; height:auto;">
+    <h2>Achill Crafts</h2>
+    <p>Traditional Irish 'currach' rowing boat. Replica scale model available.</p>
+  </div>
+  <div class="box">
+    <img src="shop.jpg" alt="Interior of Kieran Sweeney knitwear & craft shop" style="width:100%; height:auto;">
+    <h2>Call In To Us</h2>
+    <p>Open daily - call in on your visit to Achill to browse our gallery.</p>
+  </div>
+  <div class="box">
+    <img src="hooker-1.jpg" alt="Wooden replica of traditional hooker sailing boat" style="width:100%; height:auto;">
+    <h2>Irish Handcrafts</h2>
+    <p>Galway hooker wooden sailing boat. Replica scale model available.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Kieran Sweeney Irish Knitwear &amp; Crafts<br>Achill Sound, Co. Mayo F28 VR92</p>
+</footer>
 
 </body>
 </html>
